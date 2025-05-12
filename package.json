@@ -1,0 +1,21 @@
+{
+    "name": "instagram-downloader-bot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+      "node-telegram-bot-api": "^0.64.0",
+      "axios": "^1.6.7",
+      "dotenv": "^16.4.5"
+    },
+    "engines": {
+      "node": ">=18.0.0"
+    }
+  }
