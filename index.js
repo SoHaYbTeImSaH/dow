@@ -1,9 +1,14 @@
 const TelegramBot = require('node-telegram-bot-api');
 const axios = require('axios');
+const express = require('express');
 require('dotenv').config();
 
+// ایجاد سرور Express
+const app = express();
+const port = process.env.PORT || 3000;
+
 // تنظیمات ربات تلگرام
-const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN || '7605103548:AAFpK8cI5mB71wj2CfT-qUbyh4ExbKIsE8I', {polling: true});
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN || 'YOUR_BOT_TOKEN', {polling: true});
 
 // تنظیمات API اینستاگرام
 const INSTAGRAM_API = {
@@ -93,4 +98,11 @@ bot.on('message', async (msg) => {
     }
 });
 
-console.log('Bot is running...');
+// راه‌اندازی سرور وب
+app.get('/', (req, res) => {
+    res.send('Instagram Downloader Bot is running!');
+});
+
+app.listen(port, () => {
+    console.log(`Bot is running on port ${port}...`);
+});
